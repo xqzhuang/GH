@@ -42,8 +42,23 @@ $(document).ready(function(){
 			$(".txt-top").attr('disabled','disabled');
 			$(".txt-left").attr('disabled','disabled');
 			$(".txt-right").attr('disabled','disabled');
-		}
-		
+		}		
 
     });
+	
+		
+    $(".btn-add-node").click(function(){
+		var lat = $('.txt-top-add').val();
+		var lng = $('.txt-left-add').val();
+
+
+		// add a marker in the given location, attach some popup content to it and open the popup
+		L.marker([lat, lng]).addTo(map)
+		.bindPopup('A pretty CSS3 popup. <br> Easily customizable.');
+		
+		//close current modal
+		$(this).dialog("close");
+
+    });
+	
 });
