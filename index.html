@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GREEN HOUSE</title>	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	
+	<!-- Local style file -->
+	<link rel="stylesheet" href="css/style.css">
+	
+		
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	
+	
+	 
+    <link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+      
+    <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2'></script>
+
+  </head>
+  <body>
+  
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">WSN GREEN</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+		    <li class="active"><a href="index.html">Home</a></li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Switch<span class="caret"></span></a>
+			  <ul class="dropdown-menu" role="menu">
+				<li><a href="#">Map</a></li>
+				<li><a href="#">Green House</a></li>
+				<li><a href="#">Room 1</a></li>
+			  </ul>
+			</li>
+			<li><a href="nodes.html">Nodes</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a data-toggle="modal" data-target="#signin" href="#signin">Sign in<span class="sr-only">(current)</span></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+	<!-- Main -->
+	<div class="container main">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<div class="panel-heading wsn">
+						<h3 class="panel-title">WSN nodes</h3>
+						<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+					</div>
+					<div class="panel-body">
+					    <p>Please click 'Add' button to add a new node.</p>						
+						<center>
+							<button type="button" class="btn btn-primary btn-add" data-toggle="modal" data-target="#add-node">Add</button>
+						</center>
+						
+						<hr />
+					
+						<h4 class="sensor-info">Sensor Basis</h4>
+						Number: S23<br />
+						Battery: Low<br /> 
+						Temperature: 15 <br />
+						Humidity: 78%<br />
+						
+						<hr />
+						
+						<h4 class="sensor-info">Sensor Location</h4>
+						<form class="form-node">
+							<table class="table t-node">
+							  <tr>
+								<td  valign="middle">Battery</td> 
+								<td> 
+									<select  class="form-control sel-battery-number" disabled>
+									  <option selected>T323</option>
+									  <option>N234</option>
+									</select>								
+								</td>
+							  </tr>	
+							  
+							  <tr>
+								<td  valign="middle">Room</td> 
+								<td>
+									<select class="form-control sel-room-number" disabled>
+									  <option selected>N234</option>
+									  <option>N234</option>
+									</select>								
+								</td>
+							  </tr>	
+							  
+							  <tr>
+								<td  valign="middle">Top</td> 
+								<td><input type="text" class="form-control txt-top" value="3m" disabled></td>
+							  </tr>	
+							  
+							  <tr>
+								<td  valign="middle">Left</td> 
+								<td><input type="text" class="form-control txt-left" value="5.3m" disabled></td>
+							  </tr>
+							  
+							  <tr>
+								<td  valign="middle">Right</td> 
+								<td><input type="text" class="form-control txt-right" value="2.4m" disabled></td>
+							  </tr>	
+
+							  <tr class="centered">
+								<td colspan="2"> 
+									<p>Click 'Modify/Delete' button to modify/delete current selected node.</p>
+									<button type="button" class="btn btn-primary btn-modify-node">Modify</button>	
+									<button type="button" class="btn btn-primary btn-remove-node">Remove</button>	
+								</td>
+							  </tr>
+							</table>
+						</form>
+					</div>
+				</div>
+			</div>
+		
+		
+			<div class="col-md-9">
+				<div id="map"></div>
+			</div>
+
+		</div>
+	</div>
+	
+	
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright &copy 2015 .</p>
+      </div>
+    </footer>
+	
+	
+	<!-- MODAL FOR SIGN IN -->
+	<!-- Modal -->
+	<div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title" id="myModalLabel">Sign in</h4>
+	      </div>
+	      <div class="modal-body">
+          <div class="row centered">
+            <div class="col-md-6 col-md-offset-3">
+              <div class="account-wall">
+                <form class="form-signin">
+                  <input type="text" class="form-control" placeholder="Username" required autofocus><br />
+                  <input type="password" class="form-control" placeholder="Password" required><br />
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button><br />
+                  <label class="checkbox pull-right">
+                    <input type="checkbox" value="remember-me">
+                    Remember me
+                  </label>
+                </form>
+              </div>
+              
+            </div>
+          </div>
+	      </div>
+	      <div class="modal-footer centered">
+			<a href="#" class="text-center new-account">Create an account </a>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	
+	
+		
+	<!-- MODAL FOR ADDING NODE -->
+	<!-- Modal -->
+	<div class="modal fade" id="add-node" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title" id="myModalLabel">Add node</h4>
+	      </div>
+	      <div class="modal-body">
+          <div class="row centered">
+            <div class="col-md-6 col-md-offset-3">
+              <div class="account-wall">
+				<form class="form-add-node">
+					<table class="table t-add-node">
+					  <tr>
+						<td  valign="middle">Room</td> 
+						<td>
+							<select class="form-control sel-room-number-add">
+							  <option selected>N234</option>
+							  <option>N234</option>
+							</select>								
+						</td>
+					  </tr>	
+					
+					  <tr>
+						<td>Battery</td> 
+						<td> 
+							<select  class="form-control sel-battery-number-add">
+							  <option selected>T323</option>
+							  <option>N234</option>
+							</select>								
+						</td>
+					  </tr>	
+					  
+					  <tr>
+						<td>Top</td> 
+						<td><input type="text" class="form-control txt-top-add" value="" required></td>
+					  </tr>	
+					  
+					  <tr>
+						<td>Left</td> 
+						<td><input type="text" class="form-control txt-left-add" value="" /></td>
+					  </tr>
+					  
+					  <tr>
+						<td>Right</td> 
+						<td><input type="text" class="form-control txt-right-add" value=""></td>
+					  </tr>	
+
+					  <tr>
+						<td colspan="2"> 
+							<button type="button" class="btn btn-primary btn-add-node">Add</button>	
+						</td>
+					  </tr>
+					</table>
+				</form>
+              </div>
+              
+            </div>
+          </div>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	
+	
+	<!-- Local JavaScript files-->
+	<script src="js/script.js"></script>
+	<script src="js/map.js"></script>
+	
+  </body>
+</html>

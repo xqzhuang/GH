@@ -1,0 +1,114 @@
+
+
+
+.centered {
+    text-align: center;
+}
+
+
+
+.navbar{
+  background: #4cad70;
+  border-color: #599773;
+}
+
+/* Links */
+.navbar a {
+    color: white !important;
+	font-weight:bold;
+	font-size:15px;
+}
+
+
+.navbar-collapse .navbar-nav > .active > a {
+	color: #4FAD71 !important;
+}
+
+.navbar-collapse .navbar-nav > li > a:hover,
+.navbar-collapse .navbar-nav > li > a:focus {
+  color: #555 !important;
+  background-color: transparent;
+}
+
+
+/*hover after active*/
+.navbar-inverse .navbar-nav >  .active > a:hover{
+  background-color: #4cad70;
+  color: #ffffff;
+  box-shadow: inset 0 0px 0 #1cad59,inset 0 0 30px #75ffa7;
+  -webkit-box-shadow: inset 0 0px 0 #75ffa7,inset 0 0 30px #a1ffc5;
+  -moz-box-shadow: inset 0 0px 0 #75ffa7,inset 0 0 30px #599773;
+  -o-box-shadow: inset 0 0px 0 #87ffb1,inset 0 0 30px #a1ffc5;
+}
+
+
+.dropdown-menu a{
+  color: #555 !important;
+}
+
+
+/*Button*/
+.btn-primary {
+  color: #ffffff;
+  background: #4cad70;
+  border-color: #599773;
+}
+
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  color: #ffffff;
+  background-color: #4cad70;
+  box-shadow: inset 0 0px 0 #1cad59,inset 0 0 30px #75ffa7;
+  -webkit-box-shadow: inset 0 0px 0 #75ffa7,inset 0 0 30px #a1ffc5;
+  -moz-box-shadow: inset 0 0px 0 #75ffa7,inset 0 0 30px #599773;
+  -o-box-shadow: inset 0 0px 0 #87ffb1,inset 0 0 30px #a1ffc5;
+  border-color: #599773;
+}
+
+/*Buttons add is for opening add modal, add-node is for adding node*/
+.btn-add, .btn-add-node, .btn-modify-node, .btn-remove-node{
+  width:100px;
+}
+
+
+.main {
+	margin-top: 60px;
+}
+
+
+
+
+#map {
+	margin: 0px auto;
+	height: 800px;
+}
+
+.panel-heading span {
+    margin-top: -20px;
+    font-size: 15px;
+}
+
+.clickable {
+    cursor: pointer;
+}  
+
+.sensor-info{
+  color: #4cad70;
+}
+
+
+
+
+ /*Remove table border*/
+.t-node>tbody>tr>th, .t-node>tbody>tr>td, .t-add-node>tbody>tr>th, .t-add-node>tbody>tr>td{
+  border: none;
+  vertical-align: middle;
+}
+
+/*History page*/
+.history-table td{
+	
+}
